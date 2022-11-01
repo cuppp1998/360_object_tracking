@@ -94,6 +94,13 @@ def Object_Detection(
             pred_classes=torch.tensor(classes_all),
         )
 
+        # use `Visualizer` to draw the predictions on the image
+        v = Visualizer(
+            im[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale=1.0
+        )
+        im = v.draw_instance_predictions(output_new.to("cpu"))
+        outputfile.write(im.get_image()[:, :, ::-1])
+
         # show the current FPS
         time2 = time.time()
         if num_of_frame % 5 == 0:
@@ -101,13 +108,6 @@ def Object_Detection(
             print(str(1 / (time2 - time1)) + " fps")
 
         num_of_frame += 1
-
-        # use `Visualizer` to draw the predictions on the image
-        v = Visualizer(
-            im[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale=1.0
-        )
-        im = v.draw_instance_predictions(output_new.to("cpu"))
-        outputfile.write(im.get_image()[:, :, ::-1])
 
     # release the input and output videos
     video_capture.release()

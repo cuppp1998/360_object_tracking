@@ -124,3 +124,21 @@ The following arguments are provided:
 | SCORE_THRESHOLD  | The threshold of the confidence score |  | 0.4 |
 | NMS_THRESHOLD  | The threshold of the Non Maximum Suppression |  | 0.45 |
 | USE_MYMODEL  | A boolean value which determines whether to use the improved object detection model, if False, instead of being split into 4 parts, the image will be detected as a whole |  | True |
+
+## Examples
+For better understanding, several examples of using this package is listed as below:
+
+1. To <b>detect</b> the bicycles, cars and motorbikes ([1, 2, 3] in COCO) in a video called test.mp4 with the <b>original</b> Faster RCNN and output the result video as test_object_detection.mp4, run the following command:
+```
+python Object_Detection.py --input_video_path test.mp4 --output_video_path test_object_detection.mp4 --use_mymodel False --classes_to_detect 1 2 3 --model_type "Faster RCNN"
+```
+
+2. To <b>track</b> the people and cars ([0, 2] in COCO) in a video called test.mp4 with the improved YOLO v5 whose input resolution is 1280, and to output the result video and MOT texts as test_object_tracking.mp4 and test_object_tracking.txt, run the following command:
+```
+python Object_Tracking.py --input_video_path test.mp4 --output_video_path test_object_tracking.mp4 --MOT_text_path test_object_tracking.txt --classes_to_detect 0 2 --sub_image_width 1280
+```
+
+3. To track people, bicycles, cars, motorbikes, buses, trucks and traffic lights ([0, 1, 2, 3, 5, 7, 9] in COCO) in a video called test.mp4 and <b>detect the close unconfirmed overtakes (size<160000)</b> of only cars with the improved YOLO v5 whose input resolution is 640, and to output the result video as test_overtaking_detection.mp4, run the following command:
+```
+python Overtaking_Detection.py --input_video_path test.mp4 --output_video_path test_overtaking_detection.mp4 --mode 'Unconfirmed' --classes_to_detect_movement 2 --size_thresholds 160000
+```
