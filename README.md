@@ -28,21 +28,21 @@ The library should be run under Python 3.3+ with the following libraries install
 
 [seaborn](https://github.com/mwaskom/seaborn)
 
-1. To install all the dependencies (except Detectron2), first run the following command in a new conda environment:
-```
-pip install -r requirements.txt
-```
-2. Since in the new versions of Detectron2 (updated after Aug 5, 2022), some APIs have been modified, here we install an old version of it:
-```
-pip install -e git+https://github.com/facebookresearch/detectron2.git@5aeb252b194b93dc2879b4ac34bc51a31b5aee13#egg=detectron2
-```
-3. Then, clone the repository:
+1. First, clone the repository:
 ```
 git clone https://github.com/cuppp1998/360_object_tracking.git
 ```
-4. Download the pre-trained ReID network used in DeepSORT:
+2. To install all the dependencies (except Detectron2), run the following command in a new conda environment:
 ```
 cd 360_object_tracking
+pip install -r requirements.txt
+```
+3. Since in the new versions of Detectron2 (updated after Aug 5, 2022), some APIs have been modified, here we install an old version of it:
+```
+pip install -e git+https://github.com/facebookresearch/detectron2.git@5aeb252b194b93dc2879b4ac34bc51a31b5aee13#egg=detectron2
+```
+4. Download the pre-trained ReID network used in DeepSORT:
+```
 cd deep_sort/deep/checkpoint
 pip install gdown
 gdown 'https://drive.google.com/uc?export=download&id=1_qwTWdzT9dWNudpusgKavj_4elGgbkUN'
