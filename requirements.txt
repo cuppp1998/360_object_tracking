@@ -4,7 +4,7 @@ ipdb==0.13.9
 matplotlib==3.5.3
 numpy==1.21.6
 opencv_contrib_python==4.6.0.66
-scipy==1.9.1
+scipy==1.7.3
 pyyaml==5.1
 pandas==1.4.4
 seaborn==0.12.0
