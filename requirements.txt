@@ -1,7 +1,7 @@
 torch==1.12.1
 torchvision==0.13.1
 ipdb==0.13.9
-matplotlib==3.6.0
+matplotlib==3.5.3
 numpy==1.23.3
 opencv_contrib_python==4.6.0.66
 scipy==1.9.1
