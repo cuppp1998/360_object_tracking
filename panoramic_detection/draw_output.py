@@ -131,10 +131,10 @@ def draw_boxes(
                     # draw an arrow in the white metre which shows the direction of the dangerous object
                     angle = (((x1 + x2) / 2) / video_width * 2 * math.pi) - math.pi
                     # print(angle)
-                    print(
-                        int(500 + math.sin(angle) * 500),
-                        int(500 - math.cos(angle) * 500),
-                    )
+                    # print(
+                    #     int(500 + math.sin(angle) * 500),
+                    #     int(500 - math.cos(angle) * 500),
+                    # )
                     cv2.arrowedLine(
                         img,
                         (500, 500),
