@@ -5,6 +5,22 @@ This is a package used for object detection, object tracking and overtaking beha
 [YOLO v5](https://github.com/ultralytics/yolov5) and [Faster RCNN](https://github.com/facebookresearch/detectron2) models pre-trained on COCO dataset are used as the detectors in this package. Projection transformation from equirectangular to perspective is realized using [Perspective-and-Equirectangular](https://github.com/timy90022/Perspective-and-Equirectangular)
  and the implementation of DeepSORT was adapted from [HERE](https://github.com/ZQPei/deep_sort_pytorch).
 
+## Multiple Object Detection and Tracking in Panoramic Videos for Cycling Safety Analysis
+By Jingwei Guo, Meihui Wang, Ilya Ilyankou, Natchapon Jongwiriyanurak, Xiaowei Gao, Nicola Christie, James Haworth
+
+If you find the project useful in your research, please consider citing:
+```
+@misc{guo2024multipleobjectdetectiontracking,
+      title={Multiple Object Detection and Tracking in Panoramic Videos for Cycling Safety Analysis},
+      author={Jingwei Guo and Meihui Wang and Ilya Ilyankou and Natchapon Jongwiriyanurak and Xiaowei Gao and Nicola Christie and James Haworth},
+      year={2024},
+      eprint={2407.15199},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2407.15199},
+}
+```
+
 ## Dependencies and Installation
 The library should be run under Python 3.3+ with the following libraries installed:
 
